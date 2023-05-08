@@ -1,5 +1,5 @@
 :root{
-  --color:#f9f7f7;
+  --color:#f8f6f6;
 }
 
 *{
@@ -49,6 +49,7 @@ body{
 .gallery{
   display: flex;
   flex-wrap: wrap;
+
   justify-content: space-around;
   row-gap: 30px;
 
