@@ -28,8 +28,7 @@ const getAllPosts = (limit = 8) => {
   return db
   .query(query, queryParms)
   .then((data) => {
-    data.rows;
-    console.log(data.rows);
+    return data.rows;
   });
 };
 
