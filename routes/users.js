@@ -13,7 +13,7 @@ const userQuerys = require('../db/queries/users');
 router.get('/', (req, res) => {
   userQuerys.getUsers()
   .then((users) => {
-    
+    res.json(users);
   });
 });
 
