@@ -1,12 +1,11 @@
 const express = require('express');
 const router  = express.Router();
 
-const commentsQuerys = require('../db/queries/getallcomments')
+const commentsQuerys = require('../db/queries/getcommentwithpost ')
 
 router.get('/', (req, res) => {
-  commentsQuerys.getAllComments()
+  commentsQuerys.getCommentWithPost(postid)
     .then((comments) => {
-      console.log(comments);
       res.json(comments);
     })
     .catch((err) => {
