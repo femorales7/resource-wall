@@ -7,28 +7,31 @@
   <title>Document</title>
 </head>
 <body>
-
-  <div class="header">
-    <div class="logo-space">
-      <img
-        src="https://github.com/Ssangbomb/resource-wall/blob/main-page/public/images/logo/Logo_middterm2.png?raw=true"
-        alt=""
-        class="logo"
-      />
-    </div>
-    <div class="header-right">
-      <a class="active" href="#home">Home</a>
-      <a href="#search">Search</a>
-      <div class="credentials">
-        <input type="username" placeholder="username" name="password" />
-        <input type="password" placeholder="Password" name="password" />
-      </div>
-      <div class="bottons">
-        <button type="submit" class="btn btn-primary">Login</button>
-        <button type="submit" class="btn btn-primary">Register</button>
-      </div>
-    </div>
-  </div>
-
+  <%- include('partials/_header') %>
+  <h3>posts</h3>
+  <table>
+    <thead>
+      <% for (let post of posts)  {%>
+      <tr>
+        <th>topic</th>
+        <th>title</th>
+        <th>description</th>
+        <th>exteranl_url</th>
+        <th>rating</th>
+        <th>likes</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><%= post.topic %></td>
+        <td><%= post.title %></td>
+        <td><%= post.description %></td>
+        <td><%= post.external_url %></td>
+        <td><%= post.rating %></td>
+        <td><%= post.likes %></td>
+      </tr>
+      <% }  %>
+    </tbody>
+  </table>
 </body>
 </html>

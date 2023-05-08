@@ -23,7 +23,6 @@ const getAllPosts = (limit = 8) => {
   // };
   queryParms.push(limit);
   query += `LIMIT $${queryParms.length};`;
-  console.log(query, queryParms);
 
   return db
   .query(query, queryParms)
