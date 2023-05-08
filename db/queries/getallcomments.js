@@ -1,7 +1,7 @@
 const db = require('../connection');
 
-const getUsers = () => {
-  return db.query('SELECT * FROM users;')
+const getAllComments = () => {
+  return db.query('SELECT * FROM comments;')
     .then(data => {
       return data.rows;
     })
@@ -10,4 +10,4 @@ const getUsers = () => {
     });
 };
 
-module.exports = { getUsers };
+module.exports = { getAllComments };

@@ -8,8 +8,14 @@
 const express = require('express');
 const router  = express.Router();
 
+const userQuerys = require('../db/queries/users');
+
 router.get('/', (req, res) => {
-  res.render('users');
-}); 
+  userQuerys.getUsers()
+  .then((users) => {
+    console.log(users);
+    res.json(users);
+  });
+});
 
 module.exports = router;
