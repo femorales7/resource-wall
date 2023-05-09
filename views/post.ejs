@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <script src="https://kit.fontawesome.com/12c2509d71.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="/styles/post.css">
   <link rel="stylesheet" href="/styles/header.css" />
@@ -16,24 +18,30 @@
       <img src="https://unsophisticook.com/wp-content/uploads/2019/04/Pasta-With-Olive-Oil-And-Garlic-Recipe.jpg" alt="">
     </div>
     <div  class="content">
-      <div>
+      <div class="text">
         <div><%= posts[0].topic %></div>
         <div><%= posts[0].title %></div>
         <div><%= posts[0].description %></div>
         <div><%= posts[0].external_url %></div>
+      </div>
       <div class="footer">
-        <span class="fa fa-star checked"></span>
-        <span class="fa fa-star checked"></span>
-        <span class="fa fa-star checked"></span>
-        <span class="fa fa-star"></span>
-        <span class="fa fa-star"></span>
-        <div><%= posts[0].rating %></div>
-        <div><%= posts[0].likes %></div>
+        <div>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+        </div>
+        <i class="fa-solid fa-heart"></i>
       </div>
       </div>
     </div>
   </section>
   <section class="comment">
+    <form action="" method="post">
+      <input type="text">
+      <button></button>
+    </form>
     <% for (let post of posts)  {%>
       <div><%= post.message %></div>
     <% }  %>
