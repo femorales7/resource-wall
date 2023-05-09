@@ -1,4 +1,4 @@
-INSERT INTO posts (user_id, topic, title, description, external_url, rating, likes, date) VALUES (1, 'cooking', 'How to make branch', 'This is how to make it', 'https://www.foodnetwork.com/recipes/food-network-kitchen/spaghetti-with-oil-and-garlic-aglio-et-olio-recipe-1944538', 0, 0, NOW());
+INSERT INTO posts (user_id, topic, title, description, external_url, rating, likes, date) VALUES (1, 'cooking', 'How to make oil pasta', 'This is how to make it', 'https://www.foodnetwork.com/recipes/food-network-kitchen/spaghetti-with-oil-and-garlic-aglio-et-olio-recipe-1944538', 0, 0, NOW());
 
 INSERT INTO posts (user_id, topic, title, description, external_url, rating, likes, date) VALUES (2, 'sports', 'How to do wakeborad', 'This is how to do it', 'https://www.youtube.com/watch?v=F8Vosdtdc1A', 0, 0, NOW());
 

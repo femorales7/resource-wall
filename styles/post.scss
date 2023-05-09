@@ -1,11 +1,11 @@
 .main {
   display: flex;
   flex-direction: row;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-left: 40px;
+  padding-right: 40px;
   border: 1px solid black;
   border-radius: 10px;
-  margin: 20px;
+  margin: 40px;
   box-shadow: 12px 12px 2px 1px rgba(74, 72, 72, 0.2);
 }
 
@@ -29,7 +29,8 @@ img {
 .comment {
   font-size: inherit;
   padding-top: 40px;
-  padding-left: 20px;
+  padding-left: 40px;
+  padding-right: 40px;
   flex-direction: column;
 }
 
@@ -52,4 +53,14 @@ textarea {
   border-bottom:none;
   resize: none;
   max-height: 80px;
+  width: 100%;
+}
+
+button {
+  border: none;
+  background-color: inherit;
+}
+
+.textbox {
+  display: flex;
 }
