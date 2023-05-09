@@ -23,14 +23,14 @@ const getAllPosts = (limit = 8) => {
   // };
   queryParms.push(limit);
   query += `LIMIT $${queryParms.length};`;
-  console.log(query, queryParms);
-  console.log(db);
+  console.log(db)
 
   return db
   .query(query, queryParms)
   .then((data) => {
+    console.log(data.rows);
     return data.rows;
   });
 };
 
-module.exports = { getAllPosts }
+module.exports = { getAllPosts };
