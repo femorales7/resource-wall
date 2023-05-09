@@ -1,0 +1,5 @@
+$(() => {
+  loadImages().then(function(json) {
+    
+  })
+})

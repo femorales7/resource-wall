@@ -1,21 +1,64 @@
-$(document.readyState(function () {
-  const $imagesSeccion = $('#images');
+const express = require("express");
+const database = require("../db/getallposts");
 
-  const createImagesElement = function(images){
+const router = express.Router();
+
+$(document).ready(function () {
+  const $imagesSection = $('#images');
+
+  const createImagesElement = function(post){
 
     /* code for creating the tweet element */
     const $gallery = $("<article>").addClass("gallery");
     const $contenedor = $("<div>").addClass("contenedor");
     const $figure = $("<figure>");
-    const $gallery__img = $("<img>").addClass("gallery__img");
+    const $gallery__img = $("<img>").addClass("gallery__img").attr("src", post.external_url );
     const $layer = $("<dic>").addClass("layer");
-    const $a = $("<a>");
+    const $a = $("<a>").attr("href", `/post/${post.id}`);
     const $h3 = $("<h3>").text(post.title);
     const $icons = $("<div>").addClass("icons");
-    const $heart = $("<i>").addClass("fa-solid fa-heart").text(post.like);
-    const $comment = $("<i>").addClass("fa-solid fa-comment").text(post.comment)
+    const $heart = $("<i>").addClass("fa-solid fa-heart").text(post.likes.length);
+    const $comment = $("<i>").addClass("fa-solid fa-comment").text(post.comments.length);
 
-  }
+    $icons.append($heart, $comment);
+    $a.append($h3,$icons);
+    $layer.append($a);
+    $figure.append($layer, $gallery__img);
+    $contenedor.append($figure);
+    $gallery.append($contenedor);
+
+    return $gallery;
+
+  };
+
+  const renderImages = function (posts){
+    console.log(posts)
+    for (let post of posts) {
+      const $postElement = createImagesElement(post);
+      $imagesSection.append($postElement);
+      // $("#images").prepend($imagesSeccion);
+    }
+  };
+  database.getAllPosts()
+    .then(posts => {
+      // Render the posts on the page
+      console.log(posts)
+      renderImages(posts);
+    })
+    .catch(error => {
+      console.error(error);
+    });
+});
+
+  // const loadImages = () =>
+  // $.ajax ({
+  //   method : "GET",
+  //   url: "/",
+  //  }).then((images) => {
+  //   renderImages(images);
+  //  });
+
+  //  loadImages();
 
 
   // Selecciona todos los elementos con la clase "layer"
@@ -34,6 +77,6 @@ layers.forEach(function(layer) {
         console.log('ID de la imagen:', imageId);
     });
 });
-}))
+
 
 
