@@ -31,23 +31,21 @@
       <div class="content">
         <div class="topic">
           <label class="left" for="topic">Topic:</label>
-          <label for="topic_name">Skate</label>
+          <label for="topic_name"><%= posts[0].topic %></label>
         </div>
         <div class="title">
           <label for="title_label" class="left">Title:</label>
-          <label for="title">Colors</label>
+          <label for="title"><%= posts[0].title %></label>
         </div>
         <div class="url">
           <label for="url_label" class="left">Url:</label>
-          <label for="url"
-            >https://i.pinimg.com/736x/10/ee/04/10ee04ffe4637b3a7b15a4bfa322cb61.jpg</label
+          <label for="url"><%= posts[0].external_url %>></label
           >
         </div>
         <div class="description">
           <label for="comments_label" class="left">Description:</label>
           <p>
-            This is some commentsThis is some commentsThis is some commentsThis
-            is some commentsThis is some commentsThis is some comments
+            <%= posts[0].description %>
           </p>
         </div>
         <form>
@@ -81,12 +79,15 @@
           ></textarea>
           <div class="botton">
             <button type="submit">Submit</button>
-            <output name="counter" class="counter" for="comment-text">300</output>
+            <output name="counter" class="counter" for="comment-text"></output>
           </div>
         </form>
       </section>
       <section id="comments-container"></section>
-      <p class="old_comment">this is a comment of some picture</p>
+      <% for (let post of posts)  {%>
+        <p class="old_comment"><%= post.message %></p><div>
+      <% }  %>
+
     </footer>
   </body>
 </html>

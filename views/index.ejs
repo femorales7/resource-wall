@@ -42,7 +42,7 @@
     />
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script type="text/javascript" src="/scripts/client.js"></script>
+    <!-- <script type="text/javascript" src="/scripts/client.js"></script> -->
     <script src="/vendor/jquery-3.0.0.js"></script>
     <script defer src="/scripts/app.js"></script>
 
@@ -51,7 +51,29 @@
   <body>
     <%- include('partials/_header') %>
     <section id="images">
+      <article class="gallery">
+      <% for (let post of posts)  {%>
+        <div class="contenedor">
+          <figure>
+            <img
+              src="<%= post.external_url %>"
+              alt=""
+              class="gallery__img"
+            />
+            <div class="layer">
+              <a href="/:${post.id}">
+                <h3><%= post.title %></h3>
+                <div class="icons">
+                  <i class="fa-solid fa-heart">#</i>
+                  <i class="fa-solid fa-comment">#</i>
+                </div>
+              </a>
+            </div>
+          </figure>
+        </div>
 
+      <% }  %>
+    </article>
     </section>
   </body>
 </html>

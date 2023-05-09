@@ -7,20 +7,7 @@ const getAllPosts = (limit = 8) => {
 
   let queryParms = [];
 
-  // let clause = 'WHERE';
 
-  // if(options.topic) {
-  //   queryParms.push(options.topic);
-  //   query += `${clause} topic = $${queryParms.length}`;
-  //   clause = 'AND';
-  // };
-
-  // if(options.title) {
-  //   queryParms.push(`%${options.title}%`);
-  //   queryParms.push(`%${options.title}%`);
-  //   query += `${clause} topic LIKE $${queryParms.length} AND description LIKE $${queryParms.length}`;
-  //   clause = 'AND';
-  // };
   queryParms.push(limit);
   query += `LIMIT $${queryParms.length};`;
   console.log(db)
