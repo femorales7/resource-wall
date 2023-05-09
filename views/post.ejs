@@ -18,11 +18,10 @@
       <img src="https://unsophisticook.com/wp-content/uploads/2019/04/Pasta-With-Olive-Oil-And-Garlic-Recipe.jpg" alt="">
     </div>
     <div  class="content">
-      <div class="text">
-        <div><%= posts[0].topic %></div>
-        <div><%= posts[0].title %></div>
-        <div><%= posts[0].description %></div>
-        <div><%= posts[0].external_url %></div>
+      <div>
+        <div class="text"><strong><%= posts[0].title %></strong></div>
+        <div class="text"><%= posts[0].description %></div>
+        <div class="text"><a href="<%= posts[0].external_url %>"><%= posts[0].external_url %></a></div>
       </div>
       <div class="footer">
         <div>
@@ -39,7 +38,7 @@
   </section>
   <section class="comment">
     <form action="" method="post">
-      <input type="text">
+      <textarea name="comment" placeholder="comment" aria-label="comment"></textarea>
       <button></button>
     </form>
     <% for (let post of posts)  {%>
