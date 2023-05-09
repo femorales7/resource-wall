@@ -4,34 +4,39 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/styles/post.css">
+  <link rel="stylesheet" href="/styles/header.css" />
+  <title>Posts</title>
 </head>
 <body>
   <%- include('partials/_header') %>
-  <h3>posts</h3>
-  <table>
-    <thead>
-      <% for (let post of posts)  {%>
-      <tr>
-        <th>topic</th>
-        <th>title</th>
-        <th>description</th>
-        <th>exteranl_url</th>
-        <th>rating</th>
-        <th>likes</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><%= post.topic %></td>
-        <td><%= post.title %></td>
-        <td><%= post.description %></td>
-        <td><%= post.external_url %></td>
-        <td><%= post.rating %></td>
-        <td><%= post.likes %></td>
-      </tr>
-      <% }  %>
-    </tbody>
-  </table>
+  <section class="main">
+    <div class="picture">
+      <img src="https://unsophisticook.com/wp-content/uploads/2019/04/Pasta-With-Olive-Oil-And-Garlic-Recipe.jpg" alt="">
+    </div>
+    <div  class="content">
+      <div>
+        <div><%= posts[0].topic %></div>
+        <div><%= posts[0].title %></div>
+        <div><%= posts[0].description %></div>
+        <div><%= posts[0].external_url %></div>
+      <div class="footer">
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star"></span>
+        <span class="fa fa-star"></span>
+        <div><%= posts[0].rating %></div>
+        <div><%= posts[0].likes %></div>
+      </div>
+      </div>
+    </div>
+  </section>
+  <section class="comment">
+    <% for (let post of posts)  {%>
+      <div><%= post.message %></div>
+    <% }  %>
+  </section>
 </body>
 </html>
