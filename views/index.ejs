@@ -41,31 +41,12 @@
 
     <script src="/vendor/jquery-3.0.0.js"></script>
     <script defer src="/scripts/app.js"></script>
+    <script type="text/javascript" src="/public/scripts/client.js"></script>
   </head>
 
   <body>
-    <div class="header">
-      <div class="logo-space">
-        <img
-          src="https://github.com/Ssangbomb/resource-wall/blob/main-page/public/images/logo/Logo_middterm2.png?raw=true"
-          alt=""
-          class="logo"
-        />
-      </div>
-      <div class="header-right">
-        <a class="active" href="#home">Home</a>
-        <a href="#search">Search</a>
-        <div class="credentials">
-          <input type="username" placeholder="username" name="password" />
-          <input type="password" placeholder="Password" name="password" />
-        </div>
-        <div class="bottons">
-          <button type="submit" class="btn btn-primary">Login</button>
-          <button type="submit" class="btn btn-primary">Register</button>
-        </div>
-      </div>
-    </div>
-    <section class="images">
+    <%- include('partials/_header') %>
+    <section id="images">
       <article class="gallery">
         <div class="contenedor">
           <figure>
@@ -75,7 +56,7 @@
               class="gallery__img"
             />
             <div class="layer">
-              <a href="#post"></a>
+              <a href="/post"></a>
                 <h3>Title</h3>
                 <div class="icons">
                   <i class="fa-solid fa-heart">#</i>
