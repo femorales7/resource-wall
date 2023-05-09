@@ -7,6 +7,7 @@ CREATE TABLE posts (
   title VARCHAR(255) NOT NULL,
   description TEXT,
   external_url VARCHAR(255),
+  url_image VARCHAR(255),
   rating SMALLINT NOT NULL DEFAULT 0,
   likes INTEGER NOT NULL DEFAULT 0,
   date TIMESTAMP

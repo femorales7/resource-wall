@@ -30,6 +30,9 @@ body{
 
 
 }
+#images{
+  padding-top: 40px;
+}
 .gallery__img{
   width: 300px;
   height: 200px;
@@ -56,7 +59,7 @@ body{
 }
 
 
-.contenedor .imagenes:hover> .layer {
+.contenedor #imagenes:hover> .layer {
   opacity: 1;
   visibility: visible;
 }

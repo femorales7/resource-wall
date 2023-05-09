@@ -24,7 +24,7 @@
     <section class="main">
       <div class="picture">
         <img
-          src="https://i.pinimg.com/736x/10/ee/04/10ee04ffe4637b3a7b15a4bfa322cb61.jpg"
+          src="<%=posts[0].url_image %>"
           alt=""
         />
       </div>
@@ -39,7 +39,7 @@
         </div>
         <div class="url">
           <label for="url_label" class="left">Url:</label>
-          <label for="url"><%= posts[0].external_url %>></label
+          <label for="url"><a href="<%= posts[0].external_url %>"><%= posts[0].external_url %></a></label
           >
         </div>
         <div class="description">
@@ -83,11 +83,11 @@
           </div>
         </form>
       </section>
-      <section id="comments-container"></section>
-      <% for (let post of posts)  {%>
-        <p class="old_comment"><%= post.message %></p><div>
-      <% }  %>
-
+      <section id="comments-container">
+        <% for (let post of posts)  {%>
+          <p class="old_comment"><%= post.message %></p><div>
+        <% }  %>
+      </section>
     </footer>
   </body>
 </html>
