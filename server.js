@@ -34,6 +34,8 @@ const usersRoutes = require('./routes/users-route');
 const postRoutes = require('./routes/posts-route');
 const commentRoutes = require('./routes/comments-route');
 const indexRoute = require('./routes/index-route');
+const searchRoutes = require('./routes/search-route');
+const newPostRoutes = require('./routes/newpost-route');
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
@@ -44,6 +46,8 @@ app.use('/posts', postRoutes);
 app.use('/users', usersRoutes);
 app.use('/', indexRoute)
 app.use('/comments', commentRoutes);
+app.use('/search', searchRoutes)
+app.use('/newpost', newPostRoutes);
 // Note: mount other resources here, using the same pattern above
 
 // Home page
