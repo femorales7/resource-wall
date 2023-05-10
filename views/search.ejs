@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/styles/header.css">
+  <link rel="stylesheet" href="/styles/search.css">
+</head>
+
+  <body>
+    <%- include('partials/_header') %>
+    <div class="search-wrapper">
+      <label for="topicSearch">Topic Search</label>
+      <input type="search" id="search">
+    </div>
+    <!-- delete later -->
+    <div class="user-cards">
+      <div class="card">
+        <div class="headerSearch">Topic</div>
+        <div class="bodySearch">description</div>
+      </div>
+      <div class="card">
+        <div class="headerSearch">Topic</div>
+        <div class="bodySearch">description</div>
+      </div>
+      <div class="card">
+        <div class="headerSearch">Topic</div>
+        <div class="bodySearch">description</div>
+      </div>
+      <div class="card">
+        <div class="headerSearch">Topic</div>
+        <div class="bodySearch">description</div>
+      </div>
+    </div>
+    <!-- delete later end -->
+    <template data-search-template>
+      <div class="card">
+        <div class="headerSearch"></div>
+        <div class="bodySearch"></div>
+      </div>
+    </template>
+  </body>
