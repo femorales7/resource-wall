@@ -6,38 +6,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/styles/header.css">
   <link rel="stylesheet" href="/styles/search.css">
+  <script src="/scripts/searchSc.js" defer></script>
+  <title>Search Page</title>
 </head>
 
-  <body>
-    <%- include('partials/_header') %>
-    <div class="search-wrapper">
-      <label for="topicSearch">Topic Search</label>
-      <input type="search" id="search">
+<body>
+  <%- include('partials/_header') %>
+  <div class="search-wrapper">
+    <label for="search">Search Users</label>
+    <input type="search" id="search" data-search>
+  </div>
+  <div class="user-cards" data-user-cards-container></div>
+  <template data-user-template>
+    <div class="card">
+      <div class="header" data-header></div>
+      <div class="body" data-body></div>
     </div>
-    <!-- delete later -->
-    <div class="user-cards">
-      <div class="card">
-        <div class="headerSearch">Topic</div>
-        <div class="bodySearch">description</div>
-      </div>
-      <div class="card">
-        <div class="headerSearch">Topic</div>
-        <div class="bodySearch">description</div>
-      </div>
-      <div class="card">
-        <div class="headerSearch">Topic</div>
-        <div class="bodySearch">description</div>
-      </div>
-      <div class="card">
-        <div class="headerSearch">Topic</div>
-        <div class="bodySearch">description</div>
-      </div>
-    </div>
-    <!-- delete later end -->
-    <template data-search-template>
-      <div class="card">
-        <div class="headerSearch"></div>
-        <div class="bodySearch"></div>
-      </div>
-    </template>
-  </body>
+  </template>
+</body>
+</html>
