@@ -8,19 +8,30 @@
 const express = require('express');
 const router  = express.Router();
 
-const userQuerys = require('../db/queries/users');
 
-router.get('/', (req, res) => {
-  userQuerys.getUsers()
-  .then((users) => {
-    console.log(users);
-    res.json(users);
-  });
-});
+const getUserWithIdQuerys = require('../db/queries/getuserwithid');
 
 router.get('/login/:id', (req, res) => {
   res.cookie('user_id', req.params.id);
   res.redirect('/');
 });
+
+
+router.get('/', (req, res) => {
+  console.log('cookie', req.cookies);
+  const userId = req.cookies['user_id'];
+  console.log('userid', userId);
+  getUserWithIdQuerys.getUserWithId(userId)
+  .then((user) => {
+    console.log(user);
+    res.json(user);
+  });
+});
+
+router.get('/', (req, res) => {
+  const userId = req.cookies;
+  console.log(userId);
+})
+
 
 module.exports = router;
