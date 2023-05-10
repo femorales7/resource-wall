@@ -56,6 +56,7 @@ app.get('/', (req, res) => {
   res.render('index');
 });
 
+
 app.get('/post', (req, res) => {
   res.render('post');
 });
