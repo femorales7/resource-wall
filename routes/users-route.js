@@ -10,8 +10,7 @@ const router  = express.Router();
 
 
 const getUserWithIdQuerys = require('../db/queries/getuserwithid');
-const userQuerys = require('../db/queries/getuserwithemail');
-const { render } = require('ejs');
+const updateUserInfomationQuerys = require('../db/queries/updateuserinformation');
 
 
 // router.post('/users', (req, res) => {
@@ -48,6 +47,12 @@ router.get('/', (req, res) => {
 
 router.post("/:id", (req, res) => {
   const userName = req.body.userName;
+  const userEmail = req.body.userEmail;
+  const id = req.cookies.user_id;
+  updateUserInfomationQuerys.updateUserInfomation(userName, userEmail, id)
+  .then((data) => {
+    res.redirect('/users');
+  })
 });
 
 

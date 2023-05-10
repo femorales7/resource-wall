@@ -17,8 +17,8 @@
           <div class="front__bkg-photo"></div>
           <div class="front__face-photo"><img src="<%=user.profile_photo_url%>"></div>
           <div class="front__text">
-            <h3 class="front__text-header"><%=user.name%></h3>
-            <p class="front__text-para"><i class="fas fa-map-marker-alt front-icons"></i><%=user.email%>></p>
+            <h3 class="front__text-header"><input type="text" name="userName" value="<%=user.name%>"></h3>
+            <p class="front__text-para"><i class="fas fa-map-marker-alt front-icons"></i><input type="text" name="userEmail" value="<%=user.email%>"></p>
           </div>
           <button type="submit">Edit</button>
         </div>
