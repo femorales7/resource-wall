@@ -4,6 +4,7 @@ const express = require("express");
 const router = express.Router();
 
 const postQuerys = require("../db/queries/getallposts");
+const userQuerys = require('../db/queries/getuserwithemail');
 
 router.get('/login/:id', (req, res) => {
   res.cookie('user_id', req.params.id);
@@ -23,5 +24,12 @@ router.get('/', (req, res) => {
       res.send(err);
     });
 });
+
+router.get('/login/:id', (req, res) => {
+  res.cookie('user_id', req.params.id);
+  res.redirect('/');
+});
+
+
 
 module.exports = router;

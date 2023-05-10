@@ -65,6 +65,17 @@ app.get('/post', (req, res) => {
   res.render('post');
 });
 
+app.post('/', (req, res) => {
+  console.log(req.body);
+  const username = req.body.username;
+  const password = req.body.password;
+  if(!username || !password){
+    res.status(400).send('Please Provide an email AND a password');
+  }
+
+  res.render('index');
+
+})
 
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);
