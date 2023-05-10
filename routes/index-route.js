@@ -12,11 +12,7 @@ router.get('/', (req, res) => {
     .then((posts) => {
       console.log(posts);
       user =  {
-        id: 0,
-        name: '0',
-        email: '0',
-        password: '0',
-        profile_photo_url: '0'
+        id: 0
       }
       const templateVars = { posts: posts, user: user};
       console.log('templateVars', templateVars);

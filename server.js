@@ -48,6 +48,7 @@ app.use('/', indexRoute)
 app.use('/comments', commentRoutes);
 app.use('/search', searchRoutes)
 app.use('/newpost', newPostRoutes);
+
 // Note: mount other resources here, using the same pattern above
 
 // Home page
@@ -59,10 +60,11 @@ app.get('/', (req, res) => {
 });
 
 app.get('/post', (req, res) => {
-  res.render('post');
+  const userId = req.cookies.user_id;
+  res.render('post', userId);
 });
 
-app.post('/', (req, res) => {
+app.post('/users', (req, res) => {
   console.log(req.body);
   const username = req.body.username;
   const password = req.body.password;
