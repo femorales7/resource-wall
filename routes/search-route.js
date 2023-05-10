@@ -16,7 +16,11 @@ const postQuerys = require('../db/queries/getallposts');
 // });
 
 router.get("/", (req, res) => {
- res.render('search')
+  postQuerys.getAllPosts(req.params.id)
+  .then((response) => {
+    console.log(response);
+    res.render('search')
+  })
 })
 
   module.exports = router;
