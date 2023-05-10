@@ -5,6 +5,7 @@
   justify-content: center;
   gap: 40px;
   padding: 50px ;
+
 }
 
 .picture img {
@@ -24,6 +25,7 @@
   flex-direction: column;
   justify-content: flex-start;
   justify-content: space-between;
+  padding-top: 10px;
 }
 
 // .content .comments{
@@ -64,7 +66,6 @@
 }
 
 
-
 .content label{
   border: rgb(6, 6, 6) 1px solid;
   padding: 5px;
@@ -78,7 +79,6 @@ label.left {
   background-color: rgb(121, 141, 141);
   box-shadow: 0.5px;
 }
-
 
 // Here is the CSS for new comments and existing comments
 
@@ -140,7 +140,6 @@ main #error-message {
 }
 
 
-
 .old_comment{
   display: flex;
   flex-direction: column;
@@ -152,4 +151,3 @@ main #error-message {
   margin-bottom: 10px;
 
 }
-

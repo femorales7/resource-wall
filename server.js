@@ -33,6 +33,7 @@ const widgetApiRoutes = require('./routes/widgets-api');
 const usersRoutes = require('./routes/users-route');
 const postRoutes = require('./routes/posts-route');
 const commentRoutes = require('./routes/comments-route');
+const indexRoute = require('./routes/index-route');
 const newPostRoutes = require('./routes/newpost-route');
 
 // Mount all resource routes
@@ -42,6 +43,7 @@ app.use('/api/users', userApiRoutes);
 app.use('/api/widgets', widgetApiRoutes);
 app.use('/posts', postRoutes);
 app.use('/users', usersRoutes);
+app.use('/', indexRoute)
 app.use('/comments', commentRoutes);
 app.use('/newpost', newPostRoutes);
 // Note: mount other resources here, using the same pattern above
@@ -62,3 +64,4 @@ app.get('/post', (req, res) => {
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);
 });
+

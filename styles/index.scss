@@ -28,7 +28,9 @@ body{
   align-items: center;
 
 
-
+}
+#images{
+  padding-top: 40px;
 }
 .gallery__img{
   width: 300px;
@@ -55,8 +57,7 @@ body{
 
 }
 
-
-.contenedor .imagenes:hover> .layer {
+.contenedor #imagenes:hover> .layer {
   opacity: 1;
   visibility: visible;
 }
@@ -111,9 +112,10 @@ body{
 
 .contenedor figure:hover > .layer h3{
   color: white;
-  font-weight: 400;
-  margin-bottom: 120px;
+  font-weight: 100;
+  margin-bottom: 80px;
   transition: all 400ms ease-out;
-   margin-top: 30px;
+   margin-top: 20px;
 
 }
+
