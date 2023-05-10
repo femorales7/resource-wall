@@ -8,44 +8,51 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
-    <link rel="stylesheet" href="/styles/post.css" />
+    <!-- <link rel="stylesheet" href="/styles/post.css" /> -->
     <link rel="stylesheet" href="/styles/header.css" />
+    <link rel="stylesheet" href="/styles/newpost.css" />
     <title>New Post</title>
-
-
-    <script
-    type="text/javascript"
-    src="/scripts/composer-char-counter.js"
-  ></script>
   </head>
   <body>
     <%- include('partials/_header') %>
     <section class="main">
-      <div class="content">
+      <div class="container">
         <form action="/newpost" method="POST">
-          <div class="topic">
-           <label class="left" for="topic">Topic:</label>
-            <label for="topic_name"><input type="text" name="topic"></label>
+          <div class="row">
+            <div class="col-25">
+              <label for="fname">    Title</label>
+            </div>
+            <div class="col-75">
+              <input type="text" id="fname" name="Title" placeholder="Title...">
+            </div>
           </div>
-          <div class="title">
-           <label for="title_label" class="left">Title:</label>
-            <label for="title"><input type="text" name="title"></label>
+          <div class="row">
+            <div class="col-25">
+              <label for="exUrl">    External Url</label>
+            </div>
+            <div class="col-75">
+              <input type="text" id="exUrl" name="external_url" placeholder="External Url..">
+            </div>
           </div>
-          <div class="url">
-            <label for="url_label" class="left">Url:</label>
-            <label for="url"><input type="text" name="externalUrl"></label>
+          <div class="row">
+            <div class="col-25">
+              <label for="Image">    Image Url</label>
+            </div>
+            <div class="col-75">
+              <input type="text" id="image" name="image" placeholder="Image Url..">
+            </div>
           </div>
-          <div class="url">
-           <label for="url_label" class="left">picture:</label>
-           <label for="url"><input type="text" name="urlImage"></label>
+          <div class="row">
+            <div class="col-25">
+              <label for="description">    Description</label>
+            </div>
+            <div class="col-75">
+              <textarea id="description" name="description" placeholder="Write something.." style="height:200px"></textarea>
+            </div>
           </div>
-          <div class="description">
-            <label for="comments_label" class="left">Description:</label>
-            <p>
-             <textarea name="description"></textarea>
-            </p>
+          <div class="row">
+            <input type="submit" value="Post">
           </div>
-          <button type="submit">post</button>
         </form>
       </div>
     </section>
