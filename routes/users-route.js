@@ -11,10 +11,7 @@ const router  = express.Router();
 
 const getUserWithIdQuerys = require('../db/queries/getuserwithid');
 
-router.get('/login/:id', (req, res) => {
-  res.cookie('user_id', req.params.id);
-  res.redirect('/');
-});
+
 
 
 router.get('/', (req, res) => {

@@ -5,6 +5,11 @@ const router = express.Router();
 
 const postQuerys = require("../db/queries/getallposts");
 
+router.get('/login/:id', (req, res) => {
+  res.cookie('user_id', req.params.id);
+  res.redirect('/');
+});
+
 router.get('/', (req, res) => {
   postQuerys.getAllPosts(50)
     .then((posts) => {
