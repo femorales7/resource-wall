@@ -11,7 +11,12 @@
     <div class="header-right">
       <a class="active" href="/">Home</a>
       <a href="#search">Search</a>
-      <form class="form-inline" action="/login" method="POST">
+      <% if (user.id !== 0 ) { %>
+        <a href="#My-resources">My resource</a>
+        <a href="#My-resources">Post</a>
+        <p class="navbar-text mr-3">Logged in as <%= user.name %></p>
+        <% } else { %>
+      <form class="form-inline" action="/users" method="POST">
         <div class="credentials">
           <input type="username" placeholder="username" name="username" />
           <input type="password" placeholder="Password" name="password" />
@@ -19,9 +24,12 @@
         <div class="bottons">
           <button type="submit" class="btn btn-primary">Login</button>
         </div>
+
+
       </form>
       <div class="bottons"></div>
         <button type="submit" class="btn btn-primary">Register</button>
       </div>
+      <% } %>
     </div>
   </div>

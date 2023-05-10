@@ -32,13 +32,13 @@ router.post('/users', (req, res) => {
 
 })
 
-// router.get('/', (req, res) => {
-//   userQuerys.getUsers()
-//   .then((users) => {
-//     console.log(users);
-//     res.json(users);
-//   });
-// });
+router.get('/', (req, res) => {
+  userQuerys.getUsers()
+  .then((users) => {
+    console.log(users);
+    res.json(users);
+  });
+});
 
 // router.get('/login/:id', (req, res) => {
 //   res.cookie('user_id', req.params.id);

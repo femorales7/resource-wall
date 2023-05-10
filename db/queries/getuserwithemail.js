@@ -2,10 +2,11 @@ const db = require('../connection');
 
 
 //get user's email when they log in
-const getUserWithEmail = (email) => {
+const getUserWithEmail = (id) => {
   return db
-  .query('SELECT * FROM users WHERE email = $1;', [email])
+  .query('SELECT * FROM users WHERE id = $1;', [id])
   .then((data) => {
+    console.log(data.rows[0])
     return data.rows[0]
   })
   .catch((err) => {
