@@ -46,7 +46,9 @@ router.get('/', (req, res) => {
   console.log(userId);
 });
 
-router.post("/:")
+router.post("/:id", (req, res) => {
+  const userName = req.body.userName;
+});
 
 
 module.exports = router;
