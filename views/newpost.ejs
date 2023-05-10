@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="/styles/post.css" />
+    <link rel="stylesheet" href="/styles/header.css" />
+    <title>New Post</title>
+
+
+    <script
+    type="text/javascript"
+    src="/scripts/composer-char-counter.js"
+  ></script>
+  </head>
+  <body>
+    <%- include('partials/_header') %>
+    <section class="main">
+      <div class="content">
+        <form action="/newpost" method="POST">
+          <div class="topic">
+           <label class="left" for="topic">Topic:</label>
+            <label for="topic_name"><input type="text" name="topic"></label>
+          </div>
+          <div class="title">
+           <label for="title_label" class="left">Title:</label>
+            <label for="title"><input type="text" name="title"></label>
+          </div>
+          <div class="url">
+            <label for="url_label" class="left">Url:</label>
+            <label for="url"><input type="text" name="externalUrl"></label>
+          </div>
+          <div class="url">
+           <label for="url_label" class="left">picture:</label>
+           <label for="url"><input type="text" name="urlImage"></label>
+          </div>
+          <div class="description">
+            <label for="comments_label" class="left">Description:</label>
+            <p>
+             <textarea name="description"></textarea>
+            </p>
+          </div>
+          <button type="submit">post</button>
+        </form>
+      </div>
+    </section>
+  </body>
+</html>
