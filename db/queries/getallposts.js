@@ -3,7 +3,11 @@ const db = require('../connection');
 //get all post or search specific post
 //Only two option they can search by topic and title include description.
 const getAllPosts = (limit = 8) => {
-  let query = `SELECT * FROM posts `;
+  let query = `SELECT posts.*, COUNT(comments.id) AS comment_count
+  FROM posts
+  LEFT JOIN comments ON comments.post_id = posts.id
+  GROUP BY posts.id
+  ORDER BY posts.id `;
 
   let queryParms = [];
 
