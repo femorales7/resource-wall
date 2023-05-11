@@ -25,7 +25,11 @@ router.get('/', (req, res) => {
 });
 
 router.post('/', (req, res) => {
+
   const post = req.body;
+  const userId = req.cookies.user_id;
+  post.user_id = userId;
+
   console.log('post', post);
   // const topic = req.body.topic;
   // const title = req.body.title;

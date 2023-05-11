@@ -2,12 +2,13 @@
 
 const express = require("express");
 const router = express.Router();
-const CommentQuerys = require('../db/queries/addNewComment');
-const cookieParser = require('cookie-parser');
+const CommentQuerys = require("../db/queries/addNewComment");
+const cookieParser = require("cookie-parser");
 
 const postQuerys = require("../db/queries/getallposts");
 const onePostQuerys = require("../db/queries/onepostwithcomment");
-const userQuerys = require('../db/queries/getuserwithemail');
+const userQuerys = require("../db/queries/getuserwithemail");
+const commentQuery = require("../db/queries/getcommentwithpost ");
 
 router.use(cookieParser());
 
@@ -16,20 +17,25 @@ router.get("/:id", (req, res) => {
   const userId = req.cookies.user_id;
   console.log("userId", userId);
 
-  if (userId === undefined){
-
+  if (userId === undefined) {
     res.redirect("/");
-  };
+  }
 
-  userQuerys.getUserWithEmail(userId)
+  userQuerys
+    .getUserWithEmail(userId)
     .then((user) => {
       console.log(user);
       const templateVarsuser = { user: user };
 
       onePostQuerys.onePostWithcomment(req.params.id).then((posts) => {
-        const templateVars = { posts: posts, user: user };
+        commentQuery.getCommentWithPost(req.params.id).then((comments) =>{
+
+         const templateVars = { posts: posts, user: user, comments: comments };
         console.log("templateVars", templateVars);
         return res.render("post", templateVars);
+
+        })
+
       });
     })
     .catch((err) => {
@@ -38,23 +44,21 @@ router.get("/:id", (req, res) => {
     });
 });
 
-
-router.post('/:id', (req, res) => {
+router.post("/:id", (req, res) => {
   const userId = req.cookies.user_id;
-  const postId = req.params.id;
+  const postId = req.cookies.post_id;
   const comment = req.body.comment;
-  console.log('here i am');
+  console.log("here i am");
   CommentQuerys.addNewComment(userId, postId, comment)
-  .then((comment) => {
-    console.log('comment', comment);
-    return res.redirect(`/posts/${postId}`);
-  })
-  .catch((err) => {
-    console.error(err);
-    res.send(err);
-  });
+    .then((comment) => {
+      console.log("comment", comment);
+      return res.redirect(`/posts/${postId}`);
+    })
+    .catch((err) => {
+      console.error(err);
+      res.send(err);
+    });
 });
-
 
 // router.get('/', (req, res) => {
 //   postQuerys.getAllPosts(10)
