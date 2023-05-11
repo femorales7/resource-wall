@@ -116,7 +116,7 @@ $(document).ready(function () {
 
   loadComments();
 
-  const $form = $("#new-Comment-form");
+  // const $form = $("#new-Comment-form");
   const $textArea = $form.find("textarea");
   const errorMessage = $("#error-message");
 

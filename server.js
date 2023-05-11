@@ -5,6 +5,7 @@ require('dotenv').config();
 const sassMiddleware = require('./lib/sass-middleware');
 const express = require('express');
 const morgan = require('morgan');
+const cookieParser = require('cookie-parser')
 
 const PORT = process.env.PORT || 3000;
 const app = express();
@@ -54,6 +55,13 @@ app.use('/newpost', newPostRoutes);
 // Home page
 // Warning: avoid creating more routes in this file!
 // Separate them into separate routes files (see above).
+
+app.get('/newpost', (req, res) => {
+
+  const userId = req.cookies.user_id;
+  res.render('newpost',userId);
+});
+
 
 app.get('/', (req, res) => {
   res.render('index');

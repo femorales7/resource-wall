@@ -13,7 +13,7 @@
       <a href="#search">Search</a>
       <% if (user.id !== 0 ) { %>
         <a href="#My-resources">My resource</a>
-        <a href="#My-resources">Post</a>
+        <a href="/newpost">Post</a>
         <p class="navbar-text mr-3">Logged in as <%= user.name %></p>
         <% } else { %>
       <form class="form-inline" action="/users" method="POST">

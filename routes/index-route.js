@@ -25,10 +25,11 @@ router.get('/', (req, res) => {
 });
 
 router.get('/:id', (req, res) => {
-  res.cookie('user_id', req.params.id);
+
 
   userQuerys.getUserWithEmail(req.params.id)
     .then((user) => {
+      res.cookie('user_id', req.params.id);
       console.log(user);
       const templateVarsuser = { user: user };
 
@@ -49,25 +50,5 @@ router.get('/:id', (req, res) => {
       res.send(err);
     });
 });
-
-// router.post('/', (req, res) => {
-//   console.log(req.body);
-//   const username = req.body.username;
-//   const password = req.body.password;
-//   if(!username || !password){
-//     res.status(400).send('Please Provide an email AND a password');
-//   }
-//   userQuerys.getUserWithEmail(req.body.username)
-//   .then((user) => {
-//     console.log(user);
-//     res.cookie('user_id', user.id);
-//     const templateVars = { user : user };
-//     console.log('templateVars' ,templateVars);
-//     return res.render('index', templateVars );
-
-//   })
-
-
-// })
 
 module.exports = router;
