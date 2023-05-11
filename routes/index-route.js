@@ -70,9 +70,10 @@ router.get('/', (req, res) => {
     if (!req.query.search){
       return res.render('index', templateVars);
     }
+    const searchQuery = req.query.search.toLowerCase();
     const filterPosts = posts.filter ( (post) => {
-      return post.title.includes(req.query.search) ||
-      post.topic.includes(req.query.search)
+      return post.title.toLowerCase().includes(searchQuery) ||
+      post.topic.toLowerCase().includes(searchQuery)
     })
     const templateVars2 = { posts: filterPosts }
     return res.render('index', templateVars2)
@@ -81,4 +82,5 @@ router.get('/', (req, res) => {
     res.send(err);
   });
 });
+
 module.exports = router;
