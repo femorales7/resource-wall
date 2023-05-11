@@ -38,6 +38,7 @@ const commentRoutes = require('./routes/comments-route');
 const indexRoute = require('./routes/index-route');
 const searchRoutes = require('./routes/search-route');
 const newPostRoutes = require('./routes/newpost-route');
+const myResourceRoutes = require('./routes/myresource-route');
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
@@ -47,9 +48,11 @@ app.use('/api/widgets', widgetApiRoutes);
 app.use('/posts', postRoutes);
 app.use('/users', usersRoutes);
 app.use('/newpost', newPostRoutes);
-app.use('/', indexRoute)
+app.use('/myresource', myResourceRoutes);
+
+app.use('/', indexRoute);
 app.use('/comments', commentRoutes);
-app.use('/search', searchRoutes)
+app.use('/search', searchRoutes);
 
 
 // Note: mount other resources here, using the same pattern above
