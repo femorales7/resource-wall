@@ -25,11 +25,6 @@ router.get('/', (req, res) => {
     });
 });
 
-router.get('/login/:id', (req, res) => {
-  res.cookie('user_id', req.params.id);
-  res.redirect('/');
-});
-
 
 
 module.exports = router;

@@ -3,23 +3,34 @@
 const express = require('express');
 const router  = express.Router();
 
-const postQuerys = require('../db/queries/getallposts');
-const onePostQuerys = require('../db/queries/onepostwithcomment');
-
+const onePostQuerys = require('../db/queries/onepostwithidandcomment');
 
 
 router.get('/:id', (req, res) => {
-  onePostQuerys.onePostWithcomment(req.params.id)
+  onePostQuerys.onePostWithIdAndComment(req.params.id)
   .then((posts) => {
+    console.log(posts);
     const templateVars = { posts : posts };
-    console.log('templateVars' ,templateVars);
     return res.render('post', templateVars);
   })
   .catch((err) => {
     console.error(err);
     res.send(err);
-  })
+  });
 });
+
+// router.get('/:id', (req, res) => {
+//   commentQuerys.commentsWithPost(req.params.id)
+//   .then((comments) => {
+//     const templateVars = { comments : comments };
+//     console.log('comments' ,templateVars);
+//     return res.render('post', templateVars);
+//   })
+//   .catch((err) => {
+//     console.error(err);
+//     res.send(err);
+//   });
+// });
 
 
 
