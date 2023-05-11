@@ -4,6 +4,24 @@ const express = require('express');
 const router  = express.Router();
 
 const onePostQuerys = require('../db/queries/onepostwithidandcomment');
+const addNewCommentQuerys = require('../db/queries/addNewComment');
+
+
+router.post('/:id', (req, res) => {
+  const userId = req.cookies.user_id;
+  const postId = req.params.id;
+  const comment = req.body.comment;
+  console.log('here i am');
+  addNewCommentQuerys.addNewComment(userId, postId, comment)
+  .then((comment) => {
+    console.log('comment', comment);
+    return res.redirect(`/posts/${postId}`);
+  })
+  .catch((err) => {
+    console.error(err);
+    res.send(err);
+  });
+});
 
 
 router.get('/:id', (req, res) => {
@@ -19,32 +37,5 @@ router.get('/:id', (req, res) => {
   });
 });
 
-// router.get('/:id', (req, res) => {
-//   commentQuerys.commentsWithPost(req.params.id)
-//   .then((comments) => {
-//     const templateVars = { comments : comments };
-//     console.log('comments' ,templateVars);
-//     return res.render('post', templateVars);
-//   })
-//   .catch((err) => {
-//     console.error(err);
-//     res.send(err);
-//   });
-// });
-
-
-
-// router.get('/', (req, res) => {
-//   postQuerys.getAllPosts(10)
-//   .then((posts) => {
-//     const templateVars = { posts : posts };
-//     console.log('templateVars' ,templateVars);
-//     res.render('post', templateVars);
-//   })
-//   .catch((err) => {
-//     console.error(err);
-//     res.send(err);
-//   })
-// });
 
 module.exports = router;

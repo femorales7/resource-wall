@@ -69,10 +69,11 @@
           <h2>New Comment</h2>
         </div>
         <div id="error-message"></div>
-        <form id="new-Comment-form" action="/posts" method="POST">
+        <form id="new-Comment-form" action="/posts/<%=posts[0].id%>" method="POST">
           <label for="comment_text"></label>
           <textarea
-            name="text"
+            type="text"
+            name="comment"
             id="comment_text"
             placeholder="Would you like to leave a comment?"
           ></textarea>
