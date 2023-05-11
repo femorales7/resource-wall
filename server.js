@@ -67,10 +67,10 @@ app.get('/', (req, res) => {
   res.render('index');
 });
 
-app.get('/post', (req, res) => {
-  const userId = req.cookies.user_id;
-  res.render('post', userId);
-});
+// app.get('/post', (req, res) => {
+//   const userId = req.cookies.user_id;
+//   res.render('post', userId);
+// });
 
 app.post('/users', (req, res) => {
   console.log(req.body);

@@ -12,8 +12,8 @@
       <a class="active" href="/">Home</a>
       <a href="#search">Search</a>
       <% if (user.id !== 0 ) { %>
-        <a href="#My-resources">My resource</a>
-        <a href="/newpost">Post</a>
+        <a href="#Myresources">My resource</a>
+        <a href="#" onclick="redirectToNewPost()">Post</a>
         <p class="navbar-text mr-3">Logged in as <%= user.name %></p>
         <% } else { %>
       <form class="form-inline" action="/users" method="POST">
@@ -33,3 +33,9 @@
       <% } %>
     </div>
   </div>
+
+  <script>
+    function redirectToNewPost() {
+      window.location.href = "/newpost";
+    }
+  </script>
