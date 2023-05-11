@@ -2,6 +2,7 @@
 
 const express = require("express");
 const router = express.Router();
+const CommentQuerys = require('../db/queries/addNewComment');
 const cookieParser = require('cookie-parser');
 
 const postQuerys = require("../db/queries/getallposts");
@@ -36,6 +37,24 @@ router.get("/:id", (req, res) => {
       res.send(err);
     });
 });
+
+
+router.post('/:id', (req, res) => {
+  const userId = req.cookies.user_id;
+  const postId = req.params.id;
+  const comment = req.body.comment;
+  console.log('here i am');
+  CommentQuerys.addNewComment(userId, postId, comment)
+  .then((comment) => {
+    console.log('comment', comment);
+    return res.redirect(`/posts/${postId}`);
+  })
+  .catch((err) => {
+    console.error(err);
+    res.send(err);
+  });
+});
+
 
 // router.get('/', (req, res) => {
 //   postQuerys.getAllPosts(10)

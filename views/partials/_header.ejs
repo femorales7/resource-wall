@@ -10,10 +10,15 @@
 
     <div class="header-right">
       <a class="active" href="/">Home</a>
-      <a href="#search">Search</a>
+      <div class="search-wrapper">
+        <label for="search">Search Article</label>
+        <input type="search" id="search">
+        <button id="searchButton">Submit</button>
+      </div>
       <% if (user.id !== 0 ) { %>
         <a href="#Myresources">My resource</a>
-        <a href="#" onclick="redirectToNewPost()">Post</a>
+        <a href="/newpost">Post</a>
+        <a href="/users">User</a>
         <p class="navbar-text mr-3">Logged in as <%= user.name %></p>
         <% } else { %>
       <form class="form-inline" action="/users" method="POST">
@@ -34,8 +39,8 @@
     </div>
   </div>
 
-  <script>
+  <!-- <script>
     function redirectToNewPost() {
-      window.location.href = "/newpost";
+      window.location.href = ;
     }
-  </script>
+  </script> -->

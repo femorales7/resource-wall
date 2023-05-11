@@ -8,8 +8,9 @@ router.use(cookieParser());
 
 
 router.get('/', (req, res) => {
-  console.log({ userId: userId })
+
   const userId = req.cookies.user_id;
+
   console.log({ userId: userId });
   userQuerys.getUserWithEmail(userId)
     .then((user) => {
@@ -23,20 +24,20 @@ router.get('/', (req, res) => {
     });
 });
 
-// router.post('/', (req, res) => {
-//   const post = req.body;
-//   console.log('post', post);
-//   // const topic = req.body.topic;
-//   // const title = req.body.title;
-//   // const externalUrl = req.body.externalUre;
-//   // const urlImage = req.body.urlImage;
-//   // const description = req.body.description;
-//   addNewPostquery.addNewPost(post)
-//   .then((data) => {
-//     console.log('add new post', data);
-//     res.redirect('/newpost');
-//   })
-// });
+router.post('/', (req, res) => {
+  const post = req.body;
+  console.log('post', post);
+  // const topic = req.body.topic;
+  // const title = req.body.title;
+  // const externalUrl = req.body.externalUre;
+  // const urlImage = req.body.urlImage;
+  // const description = req.body.description;
+  addNewPostquery.addNewPost(post)
+  .then((data) => {
+    console.log('add new post', data);
+    res.redirect('/newpost');
+  })
+});
 
 
 
