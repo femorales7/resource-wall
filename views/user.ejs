@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=, initial-scale=1.0">
+  <link rel="icon" href="data:;base64,iVBORw0KGgo=" />
+  <link rel="stylesheet" href="/styles/header.css" />
+  <link rel="stylesheet" href="/styles/user.css">
+  <title>User information</title>
+</head>
+<body>
+  <%- include('partials/_header') %>
+  <div class="outer-div">
+    <div class="inner-div">
+      <form action="/users/<%=user.id%>" method="POST">
+        <div class="front">
+          <div class="front__bkg-photo"></div>
+          <div class="front__face-photo"><img src="<%=user.profile_photo_url%>"></div>
+          <div class="front__text">
+            <h3 class="front__text-header"><input type="text" name="userName" value="<%=user.name%>"></h3>
+            <p class="front__text-para"><i class="fas fa-map-marker-alt front-icons"></i><input type="text" name="userEmail" value="<%=user.email%>"></p>
+          </div>
+          <button type="submit">Edit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
+</html>

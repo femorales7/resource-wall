@@ -1,0 +1,46 @@
+  <div class="header">
+
+    <div class="logo-space">
+      <img
+        src="https://github.com/Ssangbomb/resource-wall/blob/main-page/public/images/logo/Logo_middterm2.png?raw=true"
+        alt=""
+        class="logo"
+      />
+    </div>
+
+    <div class="header-right">
+      <a class="active" href="/">Home</a>
+      <div class="search-wrapper">
+        <label for="search">Search Article</label>
+        <input type="search" id="search">
+        <button id="searchButton">Submit</button>
+      </div>
+      <% if (user.id !== 0 ) { %>
+        <a href="#Myresources">My resource</a>
+        <a href="/newpost">Post</a>
+        <a href="/users">User</a>
+        <p class="navbar-text mr-3">Logged in as <%= user.name %></p>
+        <% } else { %>
+      <form class="form-inline" action="/users" method="POST">
+        <div class="credentials">
+          <input type="username" placeholder="username" name="username" />
+          <input type="password" placeholder="Password" name="password" />
+        </div>
+        <div class="bottons">
+          <button type="submit" class="btn btn-primary">Login</button>
+        </div>
+
+
+      </form>
+      <div class="bottons"></div>
+        <button type="submit" class="btn btn-primary">Register</button>
+      </div>
+      <% } %>
+    </div>
+  </div>
+
+  <!-- <script>
+    function redirectToNewPost() {
+      window.location.href = ;
+    }
+  </script> -->
