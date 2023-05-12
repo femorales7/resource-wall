@@ -64,6 +64,9 @@
           <div id="number">
             <%= rate[0].avg %>
           </div>
+          <div>
+            <%= like[0].count %>
+          </div>
           <form class="rating" action="/rating" method="POST">
 
 
@@ -87,6 +90,9 @@
 
           </form>
 
+          <form action="/likes" method="POST">
+            <div><button class="like-Unlike" type="submit"><i class="fa-regular fa-heart" style="color: #ff0000;"></i></button></div>
+          </form>
         </section>
       </div>
     </section>
