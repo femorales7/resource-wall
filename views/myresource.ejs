@@ -70,8 +70,30 @@
             </div>
           </figure>
         </div>
-
       <% }  %>
+      <div>
+        <h3>the resource that you liked</h3>
+        <% for (let likedpost of likedposts) {%>
+          <div class="contenedor">
+            <figure>
+              <img
+                src="<%=likedpost.url_image %>"
+                alt=""
+                class="gallery__img"
+              />
+              <div class="layer">
+                <a href="/posts/<%= likedpost.id %>">
+                  <h3><%= likedpost.title %></h3>
+                  <div class="icons">
+                    <i class="fa-solid fa-heart">  <%= likedpost.rating %></i>
+                    <i class="fa-solid fa-comment">  <%= likedpost.likes %></i>
+                  </div>
+                </a>
+              </div>
+            </figure>
+          </div>
+        <% }  %>
+      </div>
     </article>
     </section>
   </body>

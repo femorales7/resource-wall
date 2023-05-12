@@ -15,7 +15,7 @@ router.post("/", (req, res) => {
 router.get('/:id', (req, res) => {
   userQuerys.getUserWithEmail(req.params.id)
     .then((user) => {
-      res.cookie('user_id', req.params.id);
+      // res.cookie('user_id', req.params.id);
       postQuerys.getAllPosts(50)
         .then((posts) => {
           const templateVars = { posts: posts, user: user };
