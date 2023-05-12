@@ -21,3 +21,45 @@ VALUES (7, 'artificial intelligence', 'The Future of AI and Its Implications for
 
 INSERT INTO posts (user_id, topic, title, description, external_url, url_image, date)
 VALUES (8, 'mobile app development', 'Building Your First Android App: A Beginners Guide', 'Learn the basics of building an Android app with this beginners guide.', 'https://www.androidcentral.com/building-your-first-android-app-beginners-guide', 'https://images.unsplash.com/photo-1504610926078-a1611febcad3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80', NOW());
+
+INSERT INTO posts (user_id, topic, title, description, external_url, url_image, date)
+VALUES (3, 'cybersecurity', '5 Essential Cybersecurity Tips for Small Businesses', 'Learn how to protect your small business from cyber threats with these essential tips.', 'https://www.forbes.com/sites/forbestechcouncil/2022/05/03/five-essential-cybersecurity-tips-for-small-businesses/?sh=5c5de37656e7', 'https://images.unsplash.com/photo-1527600478564-488952effedb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80', NOW());
+
+INSERT INTO posts (user_id, topic, title, description, external_url, url_image, date)
+VALUES (4, 'machine learning', 'What Is Machine Learning and How Does It Work?', 'Learn the basics of machine learning and how it can be used to create intelligent systems.', 'https://www.freecodecamp.org/news/5-essential-tips-for-debugging-your-code-like-a-pro/', 'https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80', NOW());
+
+INSERT INTO posts (user_id, topic, title, description, external_url, url_image, date)
+VALUES (5, 'programming', '5 Essential Tips for Debugging Your Code Like a Pro', 'Learn how to debug your code more efficiently with these essential tips.', 'https://www.freecodecamp.org/news/5-essential-tips-for-debugging-your-code-like-a-pro/', 'https://images.unsplash.com/uploads/141103282695035fa1380/95cdfeef?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1730&q=80', NOW());
+
+INSERT INTO posts (user_id, topic, title, description, external_url, url_image, date)
+VALUES (6, 'cloud computing', 'The Benefits and Challenges of Cloud Computing', 'Discover the advantages and challenges of using cloud computing for your business.', 'https://www.techrepublic.com/article/the-benefits-and-challenges-of-cloud-computing/', 'https://images.unsplash.com/photo-1512295767273-ac109ac3acfa?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80', NOW());
+
+INSERT INTO posts (user_id, topic, title, description, external_url, url_image, date)
+VALUES (7, 'artificial intelligence', 'The Future of AI and Its Implications for Society', 'Explore the potential of artificial intelligence and the social implications it poses for the future.', 'https://www.bbva.com/en/the-future-of-ai-and-its-implications-for-society/', 'https://images.unsplash.com/photo-1562408590-e32931084e23?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80', NOW());
+
+INSERT INTO posts (user_id, topic, title, description, external_url, url_image, date)
+VALUES (8, 'mobile app development', 'Building Your First Android App: A Beginners Guide', 'Learn the basics of building an Android app with this beginners guide.', 'https://www.androidcentral.com/building-your-first-android-app-beginners-guide', 'https://images.unsplash.com/photo-1496181133206-80ce9b88a853?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80', NOW());
+
+
+INSERT INTO posts (user_id, topic, title, description, external_url, url_image, date)
+VALUES (3, 'cybersecurity', '5 Essential Cybersecurity Tips for Small Businesses', 'Learn how to protect your small business from cyber threats with these essential tips.', 'https://www.forbes.com/sites/forbestechcouncil/2022/05/03/five-essential-cybersecurity-tips-for-small-businesses/?sh=5c5de37656e7', 'https://images.unsplash.com/photo-1580584126903-c17d41830450?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1039&q=80', NOW());
+
+INSERT INTO posts (user_id, topic, title, description, external_url, url_image, date)
+VALUES (4, 'machine learning', 'What Is Machine Learning and How Does It Work?', 'Learn the basics of machine learning and how it can be used to create intelligent systems.', 'https://www.digitaltrends.com/computing/what-is-machine-learning/', 'https://images.unsplash.com/photo-1495592822108-9e6261896da8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80', NOW());
+
+INSERT INTO posts (user_id, topic, title, description, external_url, url_image, date)
+VALUES (5, 'programming', '5 Essential Tips for Debugging Your Code Like a Pro', 'Learn how to debug your code more efficiently with these essential tips.', 'https://www.freecodecamp.org/news/5-essential-tips-for-debugging-your-code-like-a-pro/', 'https://images.unsplash.com/photo-1471897488648-5eae4ac6686b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80', NOW());
+
+INSERT INTO posts (user_id, topic, title, description, external_url, url_image, date)
+VALUES (6, 'cloud computing', 'The Benefits and Challenges of Cloud Computing', 'Discover the advantages and challenges of using cloud computing for your business.', 'https://www.techrepublic.com/article/the-benefits-and-challenges-of-cloud-computing/', 'https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1469&q=80', NOW());
+
+INSERT INTO posts (user_id, topic, title, description, external_url, url_image, date)
+VALUES (7, 'artificial intelligence', 'The Future of AI and Its Implications for Society', 'Explore the potential of artificial intelligence and the social implications it poses for the future.', 'https://www.bbva.com/en/the-future-of-ai-and-its-implications-for-society/', 'https://images.unsplash.com/photo-1585079374502-415f8516dcc3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80', NOW());
+
+INSERT INTO posts (user_id, topic, title, description, external_url, url_image, date)
+VALUES (8, 'mobile app development', 'Building Your First Android App: A Beginners Guide', 'Learn the basics of building an Android app with this beginners guide.', 'https://www.androidcentral.com/building-your-first-android-app-beginners-guide', 'https://images.unsplash.com/photo-1508896080210-93c377eb4135?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1469&q=80', NOW());
+
+
+
+
+
