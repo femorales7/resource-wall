@@ -80,14 +80,7 @@
 .rating input[type="radio"] {
   display: none;
 }
-<<<<<<< HEAD
-.icons input[type="radio"] {
-  display: none;
-}
-.rate {
-=======
 .rating {
->>>>>>> feature/countCL
   display: flex;
   direction: rtl; /* right to left */
   unicode-bidi: bidi-override; /* bidi de bidireccional */
@@ -105,15 +98,8 @@
 .rating label:hover {
   color: orange;
 }
-<<<<<<< HEAD
-.icons label:hover {
-  color: orange;
-}
-.rate input[type="radio"]:checked ~ label {
-=======
 
 .rating input[type="radio"]:checked ~ label {
->>>>>>> feature/countCL
   color: orange;
 }
 .icons input[type="radio"]:checked ~ label {
