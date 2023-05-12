@@ -41,19 +41,34 @@
 .rate input[type="radio"] {
   display: none;
 }
+.icons input[type="radio"] {
+  display: none;
+}
 .rate {
   display: flex;
   direction: rtl; /* right to left */
   unicode-bidi: bidi-override; /* bidi de bidireccional */
   justify-content: center;
 }
+.icons {
+  display: flex;
+  direction: rtl; /* right to left */
+  unicode-bidi: bidi-override; /* bidi de bidireccional */
+  justify-content: center;
+}
+
 
 .rate label:hover {
   color: orange;
 }
-
+.icons label:hover {
+  color: orange;
+}
 .rate input[type="radio"]:checked ~ label {
   color: orange;
+}
+.icons input[type="radio"]:checked ~ label {
+  color: rgb(247, 10, 10);
 }
 .description p{
   overflow:  scroll;

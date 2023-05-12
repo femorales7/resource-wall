@@ -46,13 +46,15 @@ body{
   display: flex;
   gap: 50px;
   justify-content: space-around;
+  color: rgb(251, 249, 249);
+
+}
+
+.icons #heart-icon {
   color: white;
-
-
+  transition: color 0.3s ease;
 }
-.div.i:hover {
-  color: #1808f7;
-}
+
 .gallery{
   display: flex;
   flex-wrap: wrap;
