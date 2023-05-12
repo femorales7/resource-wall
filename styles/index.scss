@@ -48,8 +48,11 @@ body{
   justify-content: space-around;
   color: white;
 
-}
 
+}
+.div.i:hover {
+  color: #1808f7;
+}
 .gallery{
   display: flex;
   flex-wrap: wrap;

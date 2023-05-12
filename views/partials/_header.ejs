@@ -2,7 +2,7 @@
 
     <div class="logo-space">
       <img
-        src="https://raw.githubusercontent.com/Ssangbomb/resource-wall/master/public/images/logo/Logo_middterm2.png"
+        src="https://github.com/Ssangbomb/resource-wall/blob/master/public/images/logo/Logo_middterm2.png?raw=true"
         alt=""
         class="logo"
       />
@@ -20,6 +20,9 @@
         <a href="/newpost">Post</a>
         <a href="/users">User</a>
         <p class="navbar-text mr-3">Logged in as <%= user.name %></p>
+        <div class="bottons">
+          <button type="submit" class="btn btn-primary">logout</button>
+        </div>
         <% } else { %>
       <form class="form-inline" action="/users" method="POST">
         <div class="credentials">
