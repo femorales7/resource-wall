@@ -33,26 +33,66 @@
 //   justify-content: center;
 //   overflow: auto;
 // }
+.avr-rating {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+}
 
-.rate label {
+.avr-rating form.rating{
+  display: flex;
+  flex-direction: column;
+
+
+}
+
+.avr-rating div.satars{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.avr-rating div#number{
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+
+
+}
+.avr-rating div.rate-button{
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  padding-top: 5px;
+
+}
+#rate-button {
+  background-color: dodgerblue;
+  color: white;
+
+}
+
+
+.rating label {
   color: grey;
 }
 
-.rate input[type="radio"] {
+.rating input[type="radio"] {
   display: none;
 }
-.rate {
+.rating {
   display: flex;
   direction: rtl; /* right to left */
   unicode-bidi: bidi-override; /* bidi de bidireccional */
   justify-content: center;
+  align-self: center;
 }
 
-.rate label:hover {
+.rating label:hover {
   color: orange;
 }
 
-.rate input[type="radio"]:checked ~ label {
+.rating input[type="radio"]:checked ~ label {
   color: orange;
 }
 .description p{
@@ -151,3 +191,10 @@ main #error-message {
   margin-bottom: 10px;
 
 }
+
+
+// Footer
+// © 2023 GitHub, Inc.
+// Footer navigation
+// Terms
+// Privacy
