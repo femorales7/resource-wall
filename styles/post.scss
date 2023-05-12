@@ -201,17 +201,18 @@ main #error-message {
   margin-bottom: 10px;
 
 }
+#likes{
+  display: flex;
+  justify-content: center;
+}
+section.likes {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-self: center;
+}
 
-<<<<<<< HEAD
-
-// Footer
-// © 2023 GitHub, Inc.
-// Footer navigation
-// Terms
-// Privacy
-=======
 .like-Unlike {
   border-style: none;
   background-color: inherit;
 }
->>>>>>> feature/likes
