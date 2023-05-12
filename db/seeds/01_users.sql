@@ -1,6 +1,11 @@
--- Users table seeds here (Example)
 INSERT INTO users (name, email, password, profile_photo_url) VALUES ('Ryan Reynolds', 'ryanreynolds@mail.com', 'password', 'https://i.ytimg.com/vi/quI772XuCpo/maxresdefault.jpg');
 INSERT INTO users (name, email, password, profile_photo_url) VALUES ('Scarlett Johansson', 'scarlett@mail.com', 'password', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7RBCTKcSuO3TYOOEhGWBq3faxd9qqV8aDGQ&usqp=CAU');
 INSERT INTO users (name, email, password, profile_photo_url) VALUES ('Bob Marley', 'Bobby@mail.com', 'password', 'https://wallpapers.com/images/hd/cute-profile-picture-jeik5d6qizh6dxxr.jpg');
 INSERT INTO users (name, email, password, profile_photo_url) VALUES ('Rick Shaw', 'RickS@mail.com', 'password', 'https://e0.pxfuel.com/wallpapers/105/23/desktop-wallpaper-compromised-character-gaming-profile-dark-cute-cartoon-boys.jpg');
 INSERT INTO users (name, email, password, profile_photo_url) VALUES ('Halie Doe', 'HalieD@mail.com', 'password', 'https://marketplace.canva.com/EAFEits4-uw/1/0/800w/canva-boy-cartoon-gamer-animated-twitch-profile-photo-r0bPCSjUqg0.jpg');
+INSERT INTO users (name, email, password, profile_photo_url) VALUES ('Chris Hemsworth', 'chrishemsworth@mail.com', 'password', 'https://media.vanityfair.com/photos/5da6d3547fa463000935f5b7/master/pass/chris-hemsworth-jojo-rabbit.jpg');
+INSERT INTO users (name, email, password, profile_photo_url) VALUES ('Gal Gadot', 'galgadot@mail.com', 'password', 'https://www.famousbirthdays.com/faces/gadot-gal-image.jpg');
+INSERT INTO users (name, email, password, profile_photo_url) VALUES ('Tom Hiddleston', 'tomhiddleston@mail.com', 'password', 'https://cdn.britannica.com/77/191477-050-AB0A6E13/Tom-Hiddleston-Thor.jpg');
+INSERT INTO users (name, email, password, profile_photo_url) VALUES ('Margot Robbie', 'margotrobbie@mail.com', 'password', 'https://pyxis.nymag.com/v1/imgs/d08/6ab/69e02bfb44823db281a7a2c2d1a8a554ca-margot-robbie.rsquare.w1200.jpg');
+INSERT INTO users (name, email, password, profile_photo_url) VALUES ('Idris Elba', 'idriselba@mail.com', 'password', 'https://www.thewrap.com/wp-content/uploads/2018/02/Idris-Elba.jpg');
+INSERT INTO users (name, email, password, profile_photo_url) VALUES ('Emma Watson', 'emmawatson@mail.com', 'password', 'https://www.biography.com/.image/t_share/MTE1ODA0OTcxNTE0ODAzMTEz/emma-watson-212589-1-402.jpg');
