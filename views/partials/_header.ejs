@@ -10,29 +10,30 @@
 
     <div class="header-right">
       <a class="active" href="/">Home</a>
-      <div class="search-wrapper">
-        <label for="search">Search Article</label>
-        <input type="search" id="search">
-        <button id="searchButton">Submit</button>
+      <div class="box">
+        <input type="search" id="search" placeholder=" Search">
+          <i id="searchButton" class="fas fa-search"></i>
       </div>
       <% if (user.id !== 0 ) { %>
         <a href="/myresource">My resource</a>
         <a href="/newpost">Post</a>
         <a href="/users">User</a>
         <p class="navbar-text mr-3">Logged in as <%= user.name %></p>
-        <div class="bottons">
-          <button type="submit" class="btn btn-primary">logout</button>
-        </div>
+        <form action="/" method="POST">
+          <div class="bottons">
+            <button type="submit" class="btn btn-primary">logout</button>
+          </div>
+        </form>
         <% } else { %>
-      <form class="form-inline" action="/users" method="POST">
-        <div class="credentials">
-          <input type="username" placeholder="username" name="username" />
-          <input type="password" placeholder="Password" name="password" />
-        </div>
-        <div class="bottons">
-          <button type="submit" class="btn btn-primary">Login</button>
-        </div>
-
+          <form class="form-inline" action="/users" method="POST">
+            <div class="credentials">
+              <input type="username" placeholder="username" name="username" />
+              <input type="password" placeholder="Password" name="password" />
+            </div>
+            <div class="bottons">
+              <button type="submit" class="btn btn-primary">Login</button>
+            </div>
+            
 
       </form>
       <div class="bottons"></div>
