@@ -14,6 +14,8 @@
     <link rel="stylesheet" href="/styles/header.css" />
     <link rel="stylesheet" href="/styles/index.css" />
     <link rel="stylesheet" href="/styles/search.css" />
+    <link rel="stylesheet" href="/styles/search.css" />
+    <link rel="stylesheet" href="/styles/myresources.css" />
 
     <link
       rel="stylesheet"
@@ -36,44 +38,43 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Bungee&display=swap"rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Bungee&display=swap"
+      rel="stylesheet"
     />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <!-- <script type="text/javascript" src="/scripts/client.js"></script> -->
     <script src="/vendor/jquery-3.0.0.js"></script>
     <script defer src="/scripts/app.js"></script>
     <script defer src="/scripts/search.js"></script>
-
   </head>
 
   <body>
     <%- include('partials/_header') %>
     <section id="images">
       <article class="gallery">
-      <% for (let post of posts) {%>
-        <div class="contenedor">
-          <figure>
-            <img
-              src="<%=post.url_image %>"
-              alt=""
-              class="gallery__img"
-            />
-            <!-- <div style="background-image: url('<%= post.external_url %>')"></div> -->
-            <div class="layer">
-              <a href="/posts/<%= post.id %>">
-                <h3><%= post.title %></h3>
-                <div class="icons">
-                  <i class="fa-solid fa-heart">  <%= post.rating %></i>
-                  <i class="fa-solid fa-comment">  <%= post.likes %></i>
-                </div>
-              </a>
-            </div>
-          </figure>
-        </div>
-      <% }  %>
-      <div>
-        <h3>the resource that you liked</h3>
-        <% for (let likedpost of likedposts) {%>
+        <section id="my-posts">
+          <h3>My posts</h3>
+          <% for (let post of posts) {%>
+          <div class="contenedor">
+            <figure>
+              <img src="<%=post.url_image %>" alt="" class="gallery__img" />
+              <!-- <div style="background-image: url('<%= post.external_url %>')"></div> -->
+              <div class="layer">
+                <a href="/posts/<%= post.id %>">
+                  <h3><%= post.title %></h3>
+                  <div class="icons">
+                    <i class="fa-solid fa-heart"> <%= post.rating %></i>
+                    <i class="fa-solid fa-comment"> <%= post.likes %></i>
+                  </div>
+                </a>
+              </div>
+            </figure>
+          </div>
+          <% } %>
+        </section>
+        <section class = "favorites">
+          <h3 class="favoritesTitle">   My favorites posts</h3>
+          <% for (let likedpost of likedposts) {%>
           <div class="contenedor">
             <figure>
               <img
@@ -85,16 +86,16 @@
                 <a href="/posts/<%= likedpost.id %>">
                   <h3><%= likedpost.title %></h3>
                   <div class="icons">
-                    <i class="fa-solid fa-heart">  <%= likedpost.rating %></i>
-                    <i class="fa-solid fa-comment">  <%= likedpost.likes %></i>
+                    <i class="fa-solid fa-heart"> <%= likedpost.rating %></i>
+                    <i class="fa-solid fa-comment"> <%= likedpost.likes %></i>
                   </div>
                 </a>
               </div>
             </figure>
           </div>
-        <% }  %>
-      </div>
-    </article>
+          <% } %>
+        </section>
+      </article>
     </section>
   </body>
 </html>

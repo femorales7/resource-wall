@@ -1,0 +1,48 @@
+section #my-posts{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 10px;
+  border-color: black;
+  flex-grow: 40%;
+  border-radius: 6px;
+  box-shadow: 0px 15px 25px
+  rgba(0,0,0,0.50);
+
+}
+
+
+h3 {
+  align-self: center;
+  font-size: 24px; /* Tamaño de fuente personalizado */
+  color: #333; /* Color de texto personalizado */
+  margin-bottom: 20px; /* Espacio inferior personalizado */
+}
+
+#favoritesTitle {
+  align-self: center;
+  font-size: 24px; /* Tamaño de fuente personalizado */
+  color: #333; /* Color de texto personalizado */
+  margin-bottom: 20px; /* Espacio inferior personalizado */
+}
+
+section#my-posts,
+section.favorites {
+  border: 1px solid #ccc; /* Cambia el color y el grosor del borde */
+  padding: 10px; /* Agrega un espacio interno alrededor del contenido */
+   border-radius: 6px;
+  box-shadow: 0px 15px 25px
+  rgba(0,0,0,0.50);
+}
+
+section .favorites{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border-color: black;
+}
+section#my-posts .icons i,
+section.favorites .icons i {
+  margin-right: 5px; /* Añade un espacio entre los íconos */
+  color: #555; /* Color de ícono personalizado */
+}

@@ -5,7 +5,13 @@ const router = express.Router();
 
 const postQuerys = require("../db/queries/getallposts");
 const userQuerys = require('../db/queries/getuserwithemail');
+const countCommQuery = require('../db/queries/countcomment')
+router.get('/login/:id', (req, res) => {
+  res.cookie('user_id', req.params.id);
+  res.redirect('/');
+});
 
+// router.get('/:id', (req, res) => {
 
 router.post("/", (req, res) => {
   res.clearCookie('user_id');
@@ -15,10 +21,17 @@ router.post("/", (req, res) => {
 router.get('/:id', (req, res) => {
   userQuerys.getUserWithEmail(req.params.id)
     .then((user) => {
-      // res.cookie('user_id', req.params.id);
+      res.cookie('user_id', req.params.id);
+      console.log(user);
+      const templateVarsuser = { user: user };
+
       postQuerys.getAllPosts(50)
         .then((posts) => {
+
+          countCommQuery.countCommentsPerPost
+          console.log(posts);
           const templateVars = { posts: posts, user: user };
+          console.log('templateVars', templateVars);
           return res.render('index', templateVars);
         })
         .catch((err) => {
@@ -51,6 +64,7 @@ router.get('/:id', (req, res) => {
 // });
 
 router.get('/', (req, res) => {
+  console.log("req search:", req.query.search)
   postQuerys.getAllPosts(50)
   .then((posts) => {
           console.log(posts);
@@ -58,6 +72,7 @@ router.get('/', (req, res) => {
             id: 0
           }
           const templateVars = { posts: posts, user: user};
+          console.log('templateVars', templateVars);
 
     if (!req.query.search){
       return res.render('index', templateVars);
