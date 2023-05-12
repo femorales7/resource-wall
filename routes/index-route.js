@@ -19,7 +19,6 @@ router.get('/:id', (req, res) => {
         .then((posts) => {
           console.log(posts);
           const templateVars = { posts: posts, user: user };
-          console.log('templateVars', templateVars);
           return res.render('index', templateVars);
         })
         .catch((err) => {

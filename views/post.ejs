@@ -20,6 +20,7 @@
     type="text/javascript"
     src="/scripts/composer-char-counter.js"
   ></script>
+    <script src="https://kit.fontawesome.com/12c2509d71.js" crossorigin="anonymous"></script>
   </head>
   <body>
     <%- include('partials/_header') %>
@@ -50,9 +51,14 @@
             <%= posts[0].description %>
           </p>
         </div>
-        <div>
-          <%= rate[0].avg %>
-        </div>
+        <section>
+          <div>
+            <%= rate[0].avg %>
+          </div>
+          <div>
+            <%= like[0].count %>
+          </div>
+        </section>
         <form class="rating" action="/rating" method="POST">
           <label>
             <input type="radio" name="rating" value="1" />
@@ -87,6 +93,9 @@
           <div class="rate-button">
             <button type="submit">rate!</button>
           </div>
+        </form>
+        <form action="/likes" method="POST">
+          <div><button class="like-Unlike" type="submit"><i class="fa-regular fa-heart" style="color: #ff0000;"></i></button></div>
         </form>
       </div>
     </section>
