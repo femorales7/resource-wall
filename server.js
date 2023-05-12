@@ -40,13 +40,14 @@ const searchRoutes = require('./routes/search-route');
 const newPostRoutes = require('./routes/newpost-route');
 const myResourceRoutes = require('./routes/myresource-route');
 const ratingRoutes = require('./routes/rating-route');
+const likeRoutes = require('./routes/like-route');
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
 // Note: Endpoints that return data (eg. JSON) usually start with `/api`
 app.use('/api/users', userApiRoutes);
 app.use('/api/widgets', widgetApiRoutes);
-
+app.use('/likes', likeRoutes)
 app.use('/posts', postRoutes);
 app.use('/users', usersRoutes);
 app.use('/newpost', newPostRoutes);
