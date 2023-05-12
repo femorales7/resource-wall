@@ -9,6 +9,7 @@ const postQuerys = require("../db/queries/getallposts");
 const onePostQuerys = require("../db/queries/onepostwithcomment");
 const userQuerys = require("../db/queries/getuserwithemail");
 const commentQuery = require("../db/queries/getcommentwithpost ");
+const averageRateQuery = require("../db/queries/averagerate");
 
 router.use(cookieParser());
 
@@ -29,10 +30,17 @@ router.get("/:id", (req, res) => {
 
       onePostQuerys.onePostWithcomment(req.params.id).then((posts) => {
         commentQuery.getCommentWithPost(req.params.id).then((comments) =>{
-
-         const templateVars = { posts: posts, user: user, comments: comments };
-        console.log("templateVars", templateVars);
-        return res.render("post", templateVars);
+          averageRateQuery.averageRate(req.params.id).then((rate) => {
+            console.log('rate', rate);
+            const templateVars = {
+              posts: posts,
+              user: user,
+              comments: comments,
+              rate: rate
+            };
+            console.log("templateVars", templateVars);
+            return res.render("post", templateVars);
+          })
 
         })
 
